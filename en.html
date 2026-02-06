@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Profile | Qimah Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://qimah-profile.github.io/images/icon.png" type="image/x-icon">
+<style>
+/* 1. Global Print & Fixes */
+* {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+body { 
+    font-family: 'Cairo', sans-serif; 
+    background: radial-gradient(circle at top left, #e2e8f0, #cbd5e1); 
+    margin: 0; 
+    padding: 0; 
+}
+
+@media screen and (max-width: 820px) {
+    .whatsapp-sticky {
+        display: flex !important; 
+        zoom: calc(820 / 100vw) !important;
+    }
+    html {
+        zoom: calc(100vw / 820) !important;
+        width: 820px !important;
+        overflow-x: hidden !important;
+        transform-origin: top left !important;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        width: 820px !important;
+        min-width: 820px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .page {
+        margin: 10px auto !important;
+        box-shadow: none !important; 
+    }
+}
+@media print {
+    
+@page {
+        size: A4;
+        margin: 0;
+    }
+
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    .page {
+        width: 210mm !important;
+        height: 296mm !important; 
+        margin: 0 !important;
+        border: none !important;
+        float: none !important;
+        position: relative !important;
+        page-break-after: always !important;
+        background-image: url('https://qimah-profile.github.io/images/bggg.png') !important;
+        background-size: 100% 100% !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-color: white !important;
+        display: flex !important;
+    }
+    
+    html, body {
+        height: 100%;
+    }
+
+    .hero-bg, .bg-dark-green, .service-box, .cert-container {
+        -webkit-print-color-adjust: exact !important;
+    }
+}
+
+/* 2. Page Container */
+.page {
+    width: 210mm;
+    height: 297mm;
+    padding: 20mm;
+    margin: 15mm auto;
+    background-color: white;
+    background-image: url('https://qimah-profile.github.io/images/bggg.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 3. Hero & Header */
+.hero-bg { 
+    background: linear-gradient(135deg, rgba(13, 55, 45, 0.95), rgba(20, 83, 68, 0.92)), 
+                url('https://images.unsplash.com/photo-1557597774-9d2739f85a76?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px 30px;
+    border-radius: 24px;
+    border-bottom: 4px solid #c5a059;
+    box-shadow: 0 10px 25px rgba(13, 55, 45, 0.2);
+}
+
+.gold-text { 
+    background: linear-gradient(135deg, #c5a059 0%, #f1d592 50%, #c5a059 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.bg-dark-green { background-color: #0d372d; border: 1px solid rgba(255,255,255,0.1); }
+
+.service-box { 
+    background: #F9FAFB; 
+    border: 1px solid #edf2f7; 
+    padding: 18px; 
+    border-radius: 16px; 
+    height: 145px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.service-box i {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #c5a059;
+}
+
+.cert-container { 
+    background: #f8fafc; 
+    border: 1px solid #e2e8f0; 
+    padding: 15px; 
+    border-radius: 12px;
+    display: grid;
+    align-items: center;
+}
+
+.footer-info { 
+    position: absolute; 
+    bottom: 10mm; 
+    left: 20mm; 
+    right: 20mm; 
+    border-top: 1px solid #eee; 
+    padding-top: 15px; 
+    font-size: 10px; 
+    color: #64748b;
+    font-weight: 600;
+}
+
+.space-y-4 > div { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+h1, h3, h4 { letter-spacing: -0.5px; }
+p { line-height: 1.6; } 
+
+.control-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px !important; 
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #c5a059;
+    z-index: 9999;
+    display: flex;
+    align-items: center; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.control-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.download-link {
+    background: #0d372d;
+    color: #f1d592;
+    height: 55px !important; 
+    padding: 0 25px !important; 
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 16px !important;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 2px solid #c5a059;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.zoom-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f1f5f9;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.zoom-btn {
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: #0d372d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+#zoomValue {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0d372d;
+    width: 50px;
+    text-align: center;
+}
+
+body {
+    padding-top: 70px !important; 
+}
+
+@media print {
+    .no-print { display: none !important; }
+    body { padding-top: 0 !important; }
+}
+
+@media screen and (max-width: 820px) {
+    .control-bar {
+        zoom: 1 !important; 
+        width: 100vw !important;
+    }
+}
+
+.whatsapp-sticky {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10000;
+    text-decoration: none;
+}
+
+.wa-icon-circle {
+    width: 65px;
+    height: 65px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 3px solid white;
+}
+
+/* RTL to LTR border fixes */
+.page h3 { border-left: 4px solid #c5a059; border-right: none; padding-left: 1rem; padding-right: 0; }
+.space-y-4 .border-r-4 { border-left-width: 4px; border-right-width: 0; }
+.cert-container div { border-right: 1px solid #e2e8f0; border-left: none; }
+.cert-container div:last-child { border-right: none; }
+</style>
+</head>
+<body>
+<div class="control-bar no-print">
+    <div class="control-container">
+        <a href="/Company-Profile-Qimah-Security.pdf" download class="download-link">
+            <i class="fas fa-cloud-arrow-down mr-2"></i>
+            Download PDF
+        </a>
+
+        <div class="zoom-controls">
+            <button onclick="changeZoom(10)" class="zoom-btn">
+                <i class="fas fa-plus"></i>
+            </button>
+            <span id="zoomValue">100%</span>
+            <button onclick="changeZoom(-10)" class="zoom-btn">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+    <div class="page">
+        <div class="hero-bg text-center mb-6">
+            <span class="inline-block bg-yellow-600 text-white px-6 py-1 rounded mb-4 font-semibold text-sm uppercase tracking-wider">25 Years of Excellence</span>
+            <h1 class="text-4xl font-black mb-4 leading-tight">Qimah Security<br><span class="text-yellow-400">Your Strategic Partner</span></h1>
+            <p class="text-sm text-gray-200 max-w-2xl mx-auto italic">Committed to delivering world-class protection and safety solutions according to international standards.</p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 text-center mb-6">
+            <div class="bg-dark-green p-4 rounded-xl text-white">
+                <div class="text-2xl font-black gold-text">25+</div>
+                <p class="text-[10px] uppercase tracking-tighter">Years of Experience</p>
+            </div>
+            <div class="bg-dark-green p-4 rounded-xl text-white">
+                <div class="text-2xl font-black gold-text">13+</div>
+                <p class="text-[10px] uppercase tracking-tighter">Regions Covered</p>
+            </div>
+            <div class="bg-dark-green p-4 rounded-xl text-white">
+                <div class="text-2xl font-black gold-text">100%</div>
+                <p class="text-[10px] uppercase tracking-tighter">Standard Compliance</p>
+            </div>
+        </div>
+
+        <div class="flex-grow">
+            <h3 class="text-xl font-black text-dark-green mb-3">About Qimah Security</h3>
+            <p class="text-gray-600 text-[13px] leading-relaxed mb-4">We believe that security is not just a procedure, it is the foundation of a dignified life and societal prosperity. Through our qualified personnel and advanced systems, we provide a secure environment that enables individuals and organizations to operate with absolute confidence.</p>
+            <p class="text-gray-600 mb-6 leading-relaxed">Qimah Security upholds the highest benchmarks of quality and professionalism, ensuring a stable environment for clients across government and private sectors. We invest heavily in training programs and state-of-the-art surveillance technology to maintain our competitive edge and ensure customer satisfaction remains at the heart of our mission.</p>
+
+            <div class="cert-container grid grid-cols-4 gap-2 mb-6">
+                <div class="font-black text-[11px] text-dark-green text-center py-2">ISO 9001:2015</div>
+                <div class="font-black text-[11px] text-dark-green text-center py-2">SACS-002</div>
+                <div class="font-black text-[11px] text-dark-green text-center py-2">HCIS COMPLIANT</div>
+                <div class="font-black text-[11px] text-dark-green text-center py-2">OHSMS</div>
+            </div>
+
+            <div class="mt-2">
+                <img src="/images/hirasa.jpg" class="w-full h-44 object-cover rounded-2xl border" alt="Security Infrastructure" style="min-height: 250px;">
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="page">
+        <div class="space-y-4 mb-6">
+            <div class="bg-gray-50 border-l-4 border-yellow-500 p-5 rounded-xl">
+                <h4 class="font-semibold text-dark-green text-sm mb-2 uppercase tracking-wide"><i class="fas fa-bullseye mr-2"></i> Our Mission</h4>
+                <p class="text-gray-600 text-[11px] leading-relaxed">To provide comprehensive and reliable security solutions through a highly trained team and innovative technology, ensuring the maximum efficiency and peace of mind for our clients.</p>
+            </div>
+            <div class="bg-gray-50 border-l-4 border-dark-green p-5 rounded-xl">
+                <h4 class="font-semibold text-dark-green text-sm mb-2 uppercase tracking-wide"><i class="fas fa-eye mr-2"></i> Our Vision</h4>
+                <p class="text-gray-600 text-[11px] leading-relaxed">To be the leading provider of integrated protection solutions in the Saudi Arabia by continuously adopting cutting-edge security advancements and delivering service excellence rooted in professionalism.</p>
+            </div>
+        </div>
+
+        <div class="text-center mb-4">
+            <h3 class="text-xl font-black text-dark-green border-none p-0">Specialized Services</h3>
+            <div class="w-16 h-1 bg-yellow-500 mx-auto mt-1 mb-3"></div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 flex-grow">
+            <div class="service-box">
+                <i class="fas fa-user-shield"></i>
+                <h5 class="font-semibold text-[14px] mb-1">Guarding Services</h5>
+                <p class="text-[12px] text-gray-500">Professional security guards trained for site protection and vigilance.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-building-shield"></i>
+                <h5 class="font-semibold text-[14px] mb-1">Facility Security</h5>
+                <p class="text-[12px] text-gray-500">Securing residential complexes, commercial centers, and industrial sites.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-video"></i>
+                <h5 class="font-semibold text-[14px] mb-1">Advanced Technology</h5>
+                <p class="text-[12px] text-gray-500">Cutting-edge surveillance and communication tools for total control.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-magnifying-glass"></i>
+                <h5 class="font-semibold text-[14px] mb-1">Inspection Operations</h5>
+                <p class="text-[12px] text-gray-500">Thorough screening procedures for personnel and vehicles using modern sensors.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-truck-fast"></i>
+                <h5 class="font-semibold text-[14px] mb-1">Emergency Response</h5>
+                <p class="text-[12px] text-gray-500">Immediate response teams and innovative solutions for critical situations.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-car-on"></i>
+                <h5 class="font-semibold text-[14px] mb-1">Patrol & Traffic Management</h5>
+                <p class="text-[12px] text-gray-500">Continuous field patrols to maintain order and regulate traffic flow.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-person-dress"></i>
+                <h5 class="font-semibold text-[14px] mb-1">Female Security Cadres</h5>
+                <p class="text-[12px] text-gray-500">Trained female personnel to meet privacy requirements at vital locations.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-people-group"></i>
+                <h5 class="font-semibold text-[14px] mb-1">Event Management</h5>
+                <p class="text-[12px] text-gray-500">Crowd control and security for major events with professional precision.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-headset"></i>
+                <h5 class="font-semibold text-[14px] mb-1">Customer Care</h5>
+                <p class="text-[12px] text-gray-500">A true partnership dedicated to meeting client needs and building trust.</p>
+            </div>
+        </div>
+
+        <div class="footer-info flex justify-between">
+            <span>Striving for Excellence</span>
+            <span>Page 2 of 5</span>
+        </div>
+    </div>
+    <div class="page">
+        <div class="bg-dark-green text-white p-6 rounded-2xl mb-6">
+            <h4 class="text-center font-semibold mb-4 gold-text text-sm uppercase">Accredited by Industry Leaders</h4>
+            <div class="grid gap-2 text-center">
+                <p>Approved Supplier for Aramco & NEOM.</p>
+            </div>
+        </div>
+
+        <div class="text-center mb-6">
+            <h3 class="text-xl font-black text-dark-green border-none p-0">Documentation</h3>
+            <div class="w-16 h-1 bg-yellow-500 mx-auto mt-1"></div>
+        </div>
+
+        <div class="space-y-4 flex-grow">
+            <img src="/images/armco.jpg" alt="Aramco Accreditation" class="w-full opacity-85 rounded-lg border">
+            <img src="/images/neom.jpg" alt="NEOM Accreditation" class="w-full opacity-85 rounded-lg border">
+            <p class="text-center text-gray-400 italic text-[11px] mt-2">We honored to be trusted by top national and global entities.</p>
+        </div>
+
+        <div class="footer-info flex justify-between">
+            <span>Approved Supplier for Aramco & NEOM</span>
+            <span>Page 3 of 5</span>
+        </div>
+    </div>
+    <div class="page">
+        <div class="bg-dark-green text-white p-6 rounded-2xl mb-6">
+            <h4 class="text-center font-semibold mb-4 gold-text text-sm uppercase">Core Values</h4>
+            <div class="grid grid-cols-4 gap-2 text-center">
+                <div class="p-2 border border-white/10 rounded-lg">
+                    <i class="fas fa-user-tie text-lg mb-1 gold-text"></i>
+                    <p class="text-[9px] font-semibold">Professionalism</p>
+                </div>
+                <div class="p-2 border border-white/10 rounded-lg">
+                    <i class="fas fa-shield-halved text-lg mb-1 gold-text"></i>
+                    <p class="text-[9px] font-semibold">Discipline</p>
+                </div>
+                <div class="p-2 border border-white/10 rounded-lg">
+                    <i class="fas fa-handshake text-lg mb-1 gold-text"></i>
+                    <p class="text-[9px] font-semibold">Transparency</p>
+                </div>
+                <div class="p-2 border border-white/10 rounded-lg">
+                    <i class="fas fa-chart-line text-lg mb-1 gold-text"></i>
+                    <p class="text-[9px] font-semibold">Efficiency</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-6">
+            <h3 class="text-xl font-black text-dark-green border-none p-0">Success Partners</h3>
+            <div class="w-16 h-1 bg-yellow-500 mx-auto mt-1"></div>
+        </div>
+
+        <div class="space-y-4 flex-grow">
+            <img src="/images/coworkers.jpg" alt="Professional Team" class="w-full grayscale opacity-85 rounded-lg border">
+            <img src="/images/cert.jpg" alt="Certifications" class="w-full opacity-85 rounded-lg border">
+        </div>
+
+        <div class="footer-info flex justify-between">
+            <span>Qimah Security - Towards Safer Horizons</span>
+            <span>Page 4 of 5</span>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="text-center mb-10">
+            <h3 class="text-2xl font-black text-dark-green border-none p-0">Contact Us</h3>
+            <div class="w-20 h-1 bg-yellow-500 mx-auto mt-2"></div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 flex-grow">
+            <div class="flex items-center gap-6 p-5 bg-gray-50 rounded-2xl border-2">
+                <div class="w-12 h-12 bg-dark-green text-yellow-500 rounded-full flex items-center justify-center text-lg">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-dark-green text-sm uppercase">Headquarters</h5>
+                    <p class="text-xs text-gray-600">Riyadh, Al-Hamra District, Sheikh Hassan bin Hussain bin Ali St.</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6 p-5 bg-gray-50 rounded-2xl border-2">
+                <div class="w-12 h-12 bg-dark-green text-yellow-500 rounded-full flex items-center justify-center text-lg">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-dark-green text-sm uppercase">Contact Number</h5>
+                    <p class="text-base font-black text-yellow-600" dir="ltr">+966 54 350 1159</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6 p-5 bg-gray-50 rounded-2xl border-2">
+                <div class="w-12 h-12 bg-dark-green text-yellow-500 rounded-full flex items-center justify-center text-lg">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-dark-green text-sm uppercase">Email Address</h5>
+                    <p class="text-xs text-gray-600">qimahsa@protonmail.com</p>
+                </div>
+            </div>
+
+            <div class="mt-8 p-6 bg-dark-green rounded-3xl text-white" style="max-height: 120px;">
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div>
+                        <p class="text-[9px] text-gray-400 mb-1 uppercase">Commercial Registration</p>
+                        <p class="font-semibold text-sm">4030130976</p>
+                    </div>
+                    <div>
+                        <p class="text-[9px] text-gray-400 mb-1 uppercase">Unified ID</p>
+                        <p class="font-semibold text-sm">7014776566</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-info flex justify-between">
+            <span>&copy; 2026 Qimah Security. All Rights Reserved.</span>
+            <span>Page 5 of 5</span>
+        </div>
+    </div>
+<a href="https://wa.me/966543501159" class="whatsapp-sticky no-print" target="_blank">
+    <div class="wa-icon-circle">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+</a>
+<script>
+    let currentZoom = 100;
+    const zoomValueDisplay = document.getElementById('zoomValue');
+    const rootHtml = document.documentElement;
+
+    function changeZoom(amount) {
+        let newZoom = currentZoom + amount;
+        if (newZoom < 30 || newZoom > 200) return;
+
+        currentZoom = newZoom;
+        zoomValueDisplay.textContent = currentZoom + '%';
+        applyZoom();
+    }
+
+    function applyZoom() {
+        const scaleFactor = currentZoom / 100;
+        
+        if (window.innerWidth > 820) {
+            rootHtml.style.zoom = scaleFactor;
+        } else {
+            const mobileBaseFit = window.innerWidth / 820;
+            rootHtml.style.zoom = scaleFactor * mobileBaseFit;
+        }
+    }
+
+    window.addEventListener('resize', applyZoom);
+
+    function applyMobileWhatsApp(rez=false) {
+        const waButton = document.querySelector('.whatsapp-sticky');
+        const waIcon = document.querySelector('.wa-icon-circle');
+        
+        if (!waButton || !waIcon) return;
+
+        if (window.screen.width <= 820 || window.innerWidth <= 820) {
+            waButton.style.setProperty('display', 'flex', 'important');
+            waButton.style.setProperty('position', 'fixed', 'important');
+            waButton.style.setProperty('bottom', '50px', 'important');
+            waButton.style.setProperty('right', '50px', 'important');
+            waButton.style.setProperty('text-decoration', 'none', 'important');
+            waButton.style.setProperty('z-index', '10000', 'important');
+
+            waIcon.style.setProperty('width', '125px', 'important');
+            waIcon.style.setProperty('height', '125px', 'important');
+            waIcon.style.setProperty('font-size', '65px', 'important');
+            waIcon.style.setProperty('display', 'flex', 'important');
+            waIcon.style.setProperty('align-items', 'center', 'important');
+            waIcon.style.setProperty('justify-content', 'center', 'important');
+        }
+    }
+
+    applyMobileWhatsApp();
+    window.addEventListener('resize', applyMobileWhatsApp);
+</script>
+</body>
+</html>
