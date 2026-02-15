@@ -1,131 +1,88 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Qimah Profile</title>
-
     <meta property="og:title" content="Qimah Profile">
 
-
-
     <style>
-
-        /* Modern Dark Green Theme */
-
+        /* Modern Minimalist Style */
         body {
-
             margin: 0;
-
             padding: 0;
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
             height: 100vh;
-
-            background-color: #0a1f14; /* Deep Dark Green */
-
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-            color: #ffffff;
-
+            background-color: #ffffff; /* Clean White BG */
             overflow: hidden;
-
         }
 
-
-
-        .loader-container {
-
-            text-align: center;
-
-        }
-
-
-
-        /* The Spinner */
-
-        .spinner {
-
+        /* Modern 3-Bar Loader */
+        .loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
             width: 50px;
-
-            height: 50px;
-
-            border: 5px solid rgba(255, 255, 255, 0.1);
-
-            border-top: 5px solid #2ecc71; /* Vibrant Green accent */
-
-            border-radius: 50%;
-
-            animation: spin 0.8s linear infinite;
-
-            margin: 0 auto 20px;
-
+            height: 40px;
         }
 
-
-
-        @keyframes spin {
-
-            0% { transform: rotate(0deg); }
-
-            100% { transform: rotate(360deg); }
-
+        .bar {
+            width: 5px;
+            height: 10px;
+            background-color: #0a3d24; /* Dark Green */
+            border-radius: 10px;
+            animation: grow 1s ease-in-out infinite;
         }
 
-
-
-        .text {
-
-            font-size: 1.2rem;
-
-            letter-spacing: 1px;
-
-            opacity: 0.8;
-
+        .bar:nth-child(2) {
+            animation-delay: 0.15s;
         }
 
+        .bar:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes grow {
+            0%, 100% {
+                height: 10px;
+                opacity: 0.3;
+            }
+            50% {
+                height: 35px;
+                opacity: 1;
+            }
+        }
+
+        /* Container fade-in for smooth entry */
+        .loader-wrapper {
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
-
 </head>
-
 <body>
 
-
-
-    <div class="loader-container">
-
-        <div class="spinner"></div>
-
-        <div class="text">QIMAH</div>
-
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
     </div>
 
-
-
     <script>
-
-        // Wait for 1000ms (1 second) then redirect
-
+        // Redirect logic
         setTimeout(function() {
-
-            window.location.replace("https://qimahgroup.com");
-
+            window.location.replace("https://qimahgroup.com/profile");
         }, 1000);
-
     </script>
 
-
-
 </body>
-
 </html>
