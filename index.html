@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     
     <meta charset="UTF-8">
-    <title>ملف الشركة | قمة الأمن الحديثة</title>
+    <title>قمة الأمن الحديثة</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="https://qimmah.pages.dev/images/icon.png" type="image/x-icon">
+    <link rel="icon" href="/images/icon.png" type="image/x-icon">
 <style>
 /* 1. Global Print & Fixes */
 * {
@@ -92,7 +93,7 @@ body {
         page-break-after: always !important;
         
         /* Background fix */
-        background-image: url('https://qimmah.pages.dev/images/bggg.png') !important;
+        background-image: url('/images/bggg.png') !important;
         background-size: 100% 100% !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
@@ -119,7 +120,7 @@ body {
     padding: 20mm;
     margin: 15mm auto;
     background-color: white;
-    background-image: url('https://qimmah.pages.dev/images/bggg.png');
+    background-image: url('/images/bggg.png');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -357,11 +358,11 @@ body {
 <body>
 <div class="control-bar no-print">
     <div class="control-container">
-        <a href="/الملف-التعريفي-قمة-الامن-الحديثة.pdf" download class="download-link">
-            <i class="fas fa-cloud-arrow-down ml-2"></i>
-            حمل الملف (PDF)
+        <a href="https://qimahgroup.com/#contact" class="download-link">
+            <i class="fas fa-envelope ml-2"></i>
+           اطلب عرض سعر
         </a>
-
+        
         <div class="zoom-controls">
             <button onclick="changeZoom(10)" class="zoom-btn">
                 <i class="fas fa-plus"></i>
@@ -370,7 +371,10 @@ body {
             <button onclick="changeZoom(-10)" class="zoom-btn">
                 <i class="fas fa-minus"></i>
             </button>
+            
         </div>
+        <a href="https://qimahgroup.com/profile/en.html" class="download-link"> English <i class="fas fa-arrow-left mr-2"></i>
+        </a>
     </div>
 </div>
     <div class="page">
@@ -584,7 +588,7 @@ body {
                 </div>
                 <div>
                     <h5 class="font-bold text-dark-green text-sm">البريد الإلكتروني</h5>
-                    <p class="text-xs text-gray-600">sales@qimahgroup.com</p>
+                    <p class="text-xs text-gray-600"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e093818c8593a091898d818887928f9590ce838f8d">[email&#160;protected]</a></p>
                 </div>
             </div>
 
@@ -612,7 +616,144 @@ body {
         <i class="fab fa-whatsapp"></i>
     </div>
 </a>
-<script>
+<footer class="global-site-footer no-print">
+    <div class="footer-container">
+        <div class="footer-info-text">
+            <h4 class="footer-company-name">قمة الأمن الحديثة للحراسات الأمنية</h4>
+            <p class="footer-copyright">&copy; 2026 جميع الحقوق محفوظة. مؤسسة قمة الأمن الحديثة</p>
+        </div>
+        
+        <div class="footer-buttons-group">
+            <a href="/قمة-الامن-الحديثة.pdf" download class="btn-footer btn-gold">
+                <i class="fas fa-file-pdf ml-2"></i> حمل الملف
+            </a>
+            <a href="https://qimahgroup.com/#contact" class="btn-footer btn-dark">
+                <i class="fas fa-paper-plane ml-2"></i> طلب عرض سعر
+            </a>
+        </div>
+    </div>
+</footer>
+<style>
+/* --- Global Stabled Footer CSS --- */
+
+.global-site-footer {
+    background-color: #0d372d; /* Your Dark Green */
+    border-top: 5px solid #c5a059; /* Your Gold */
+    padding: 60px 0;
+    margin-top: 50px; /* Space after the last page */
+    width: 100%;
+    color: white;
+    position: relative;
+    clear: both;
+}
+
+.footer-container {
+    max-width: 820px; /* Matches your PDF page width */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Text Styling */
+.footer-info-text {
+    text-align: right;
+}
+
+.footer-company-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: #f1d592; /* Light Gold */
+    margin-bottom: 8px;
+    display: block;
+}
+
+.footer-copyright {
+    font-size: 13px;
+    opacity: 0.8;
+    color: #e2e8f0;
+}
+
+/* Button Group */
+.footer-buttons-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-footer {
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Specific Button Colors */
+.btn-gold {
+    background-color: #c5a059;
+    color: #0d372d;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
+}
+
+.btn-gold:hover {
+    background-color: #f1d592;
+    transform: translateY(-3px);
+}
+
+.btn-dark {
+    background-color: #145344; /* Slightly lighter green for contrast */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-dark:hover {
+    background-color: #1a6b58;
+    transform: translateY(-3px);
+}
+
+/* Print/PDF Logic: Hide footer from the document */
+@media print {
+    .global-site-footer {
+        display: none !important;
+    }
+}
+
+/* Mobile & Zoom Logic Consistency */
+@media screen and (max-width: 820px) {
+    .global-site-footer {
+        width: 820px !important; /* Matches your body/page width logic */
+        padding: 40px 0;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-info-text {
+        text-align: center;
+    }
+
+    .footer-buttons-group {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 40px;
+    }
+
+    .btn-footer {
+        justify-content: center;
+        width: 100%;
+    }
+}
+</style>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><script>
     let currentZoom = 100;
     const zoomValueDisplay = document.getElementById('zoomValue');
     const rootHtml = document.documentElement;
@@ -688,5 +829,9 @@ body {
         });
     }
 });</script>
+<script>
+    document.querySelector('[download]').click();
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"1396cd859cf942858b0e299bacd0feba","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
