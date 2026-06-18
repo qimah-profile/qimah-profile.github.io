@@ -3,442 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قمة الأمن الحديثة للحراسات الأمنية | شريكك نحو النجاح</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="/images/icon.png" type="image/x-icon">
+    <title>Qimah Profile</title>
+    <meta property="og:title" content="Qimah Profile">
+
     <style>
-        body { font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
-        .hero-bg { background: linear-gradient(rgba(13, 55, 45, 0.85), rgba(13, 55, 45, 0.85)), url('https://images.unsplash.com/photo-1557597774-9d2739f85a76?auto=format&fit=crop&w=1350&q=80'); }
-        .gold-text { color: #c5a059; }
-        .bg-dark-green { background-color: #0d372d; }
-        .border-gold { border-color: #c5a059; }
-        .service-card:hover .icon-box { background-color: #c5a059; color: white; }
-        /* تأثير دوران أيقونة التحميل */
-.spinner {
-    display: none; /* مخفي افتراضياً */
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgba(255,255,255,0.3);
-    border-radius: 50%;
-    border-top-color: #fff;
-    animation: spin 1s ease-in-out infinite;
-    margin-left: 10px;
-}
+        /* Modern Minimalist Style */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff; /* Clean White BG */
+            overflow: hidden;
+        }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
+        /* Modern 3-Bar Loader */
+        .loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 50px;
+            height: 40px;
+        }
 
-/* حالة الزر أثناء التحميل */
-button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
+        .bar {
+            width: 5px;
+            height: 10px;
+            background-color: #0a3d24; /* Dark Green */
+            border-radius: 10px;
+            animation: grow 1s ease-in-out infinite;
+        }
+
+        .bar:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .bar:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes grow {
+            0%, 100% {
+                height: 10px;
+                opacity: 0.3;
+            }
+            50% {
+                height: 35px;
+                opacity: 1;
+            }
+        }
+
+        /* Container fade-in for smooth entry */
+        .loader-wrapper {
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
-    <link rel="icon" href="/profile/images/icon.png" type="image/png">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <nav style="display: none;" class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 md:px-12 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-reverse space-x-3">
-                <div class="text-xl md:text-2xl font-extrabold text-dark-green uppercase">قمة الأمن الحديثة</div>
-            </div>
-            <div class="hidden lg:flex space-x-reverse space-x-8 font-bold text-gray-700">
-                <a href="#about" class="hover:text-green-800 transition">عن الشركة</a>
-                <a href="#values" class="hover:text-green-800 transition">قيمنا</a>
-                <a href="#services" class="hover:text-green-800 transition">خدماتنا</a>
-                <a href="#partners" class="hover:text-green-800 transition">شركاء النجاح</a>
-                <a href="#contact" class="hover:text-green-800 transition">اتصل بنا</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="#contact" class="bg-dark-green text-white px-5 py-2 rounded-md hover:bg-green-900 transition text-sm md:text-base font-bold italic">إتصل الآن</a>
-            </div>
-        </div>
-    </nav>
-
-<section class="hero-bg min-h-[650px] flex items-center text-white overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center md:text-right order-2 lg:order-1">
-                    <span class="inline-block bg-yellow-600 text-dark-green px-4 py-1 rounded mb-4 font-bold italic">خبرة تمتد لـ 25 عاماً</span>
-                    <h1 class="text-4xl md:text-5xl font-black mb-6 leading-loose">قمة الأمن الحديثة<span style="margin-top:10px !important;" class="text-yellow-100"><br>شريكك الأول نحو النجاح</span></h1>
-                    <p class="text-lg md:text-xl mb-10 text-gray-200 leading-relaxed">نلتزم بتوفير أعلى مستويات الحماية والسلامة من خلال فريق محترف مدرب وفق المعايير الوطنية والدولية.</p>
-                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                        <a href="#contact" class="bg-white text-dark-green px-8 py-3 rounded font-bold hover:bg-gray-100 transition shadow-lg" style="color:black;">طلب عرض سعر</a>
-                        <div class="flex items-center gap-2 border-r-2 pr-4 border-yellow-500">
-                            <span class="text-yellow-500 font-bold">مورد معتمد لدى:</span>
-                            <span class="font-semibold text-sm">أرامكو & نيوم</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hidden lg:block order-1 lg:order-2 relative group">
-                    <div class="absolute -inset-1 bg-white-500/20 rounded-2xl blur group-hover:blur-xl transition duration-500"></div>
-                    <img src="/images/bk-hero-site.jpg" 
-                         alt="Security Operations" 
-                         class="relative rounded-2xl shadow-2xl border-2 border-white/50 transform group-hover:scale-[1.02] transition duration-500" style="margin-right: 80px; max-height: 550px;">
-                    <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3">
-                        <div class="bg-green-100 p-2 rounded-full text-green-600"><i class="fas fa-shield-check"></i></div>
-                        <div class="text-dark-green" style="color:black;"><p class="text-xs font-bold leading-none">أمان مستدام</p><p class="text-[10px] opacity-70">24/7 حماية</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div  style="display: none;" class="bg-white py-8 border-b">
-        <div class="container mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-20 opacity-70">
-            <div class="flex flex-col items-center"><span class="font-bold text-xl">ISO 9001:2015</span><span class="text-xs uppercase">Quality Management</span></div>
-            <div class="flex flex-col items-center"><span class="font-bold text-xl">SACS-002</span><span class="text-xs uppercase">Cybersecurity Compliance</span></div>
-            <div class="flex flex-col items-center"><span class="font-bold text-xl">HCIS</span><span class="text-xs uppercase">Industrial Security</span></div>
-            <div class="flex flex-col items-center"><span class="font-bold text-xl">OHSMS</span><span class="text-xs uppercase">Health & Safety</span></div>
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </div>
 
-    <section  style="display: none;" class="py-16 bg-dark-green text-white">
-        <div class="container mx-auto px-6 grid grid-cols-3 md:grid-cols-3 gap-8 text-center">
-            <div><div class="text-4xl font-black gold-text mb-2">25+</div><p class="text-sm md:text-base">عام من الخبرة في المملكة</p></div>
-            <div><div class="text-4xl font-black gold-text mb-2">13+</div><p class="text-sm md:text-base">منطقة نغطيها في المملكة</p></div>
-            <div><div class="text-4xl font-black gold-text mb-2">100%</div><p class="text-sm md:text-base">امتثال للمعايير الأمنية</p></div>
-        </div>
-    </section>
+    <script>
+        // Redirect logic
+        setTimeout(function() {
+            window.location.replace("https://qimahgroup.com/profile");
+        }, 1000);
+    </script>
 
-    <section  style="display: none;" id="about" class="py-24">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="relative">
-                    <img src="/images/sec.webp" class="rounded-2xl shadow-2xl" alt="About Company">
-                    <div class="absolute -bottom-6 -right-6 bg-yellow-500 p-8 rounded-2xl hidden md:block shadow-xl">
-                        <p class="text-dark-green font-black text-center leading-tight">شريكك<br>الاستراتيجي في<br>نيوم</p>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-sm font-bold text-yellow-600 mb-2">عن قمة الأمن الحديثة</h2>
-                    <h3 class="text-3xl md:text-4xl font-black text-dark-green mb-6 leading-tight">منظومة أمنية متكاملة تواكب رؤية المملكة 2030</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">نحن نؤمن بأن الأمن ليس مجرد إجراء، بل هو أساس الحياة الكريمة وازدهار المجتمعات. بفضل كوادرنا المؤهلة وأنظمتنا المتطورة، نسهم في توفير بيئة آمنة تمكن الأفراد والمؤسسات من ممارسة أعمالهم بثقة وطمأنينة.</p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">تلتزم الشركة بأعلى معايير الجودة والاحترافية، مما يضمن توفير بيئة آمنة ومستقرة لعملائها سواء كانوا في القطاع الحكومي أو الخاص. إن تدريب كوادرنا البشرية هو العمود الفقري لنجاحنا. لذلك نستثمر بشكل كبير في برامج التدريب والتطوير واستخدام أحدث التقنيات في مجال الأمن والمراقبة بالإضافة الى الالتزام بأعلى معايير الاحترافية هو ما يميز قمة الأمن الحديثة. بالإضافة رضا العملاء في مقدمة أولوياتنا.</p>
-
-                </div>
-            </div>
-        </div>
-    </section>
-<section  style="display: none;" id="mission" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-    <div class="bg-white border-r-4 border-yellow-500 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
-        <h4 class="text-2xl font-bold text-dark-green mb-4 flex items-center gap-3">
-            <i class="fas fa-bullseye text-yellow-600"></i> رسالتنا
-        </h4>
-        <p class="text-gray-600 leading-relaxed text-base">
-            تلتزم قمة الأمن الحديثة للحراسات الأمنية بتقديم حلول أمنية شاملة وموثوقة لضمان سلامة وأمان عملائنا. وتهدف رسالتنا إلى حماية الأفراد والممتلكات بأعلى مستويات الكفاءة من خلال فريق محترف مدرب مجهز بأحدث التقنيات الأمنية. نحن نؤمن بأهمية الشراكة الحقيقية مع عملائنا لتلبية احتياجاتهم الفريدة وتعزيز ثقتهم بنا، مرتكزين على قيم النزاهة، الاحترافية، والابتكار.
-        </p>
-    </div>
-
-    <div class="bg-white border-r-4 border-dark-green p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
-        <h4 class="text-2xl font-bold text-dark-green mb-4 flex items-center gap-3">
-            <i class="fas fa-eye text-yellow-600"></i> رؤيتنا
-        </h4>
-        <p class="text-gray-600 leading-relaxed text-base">
-            أن تصبح قمة الأمن الحديثة المزود الأمثل لحلول الحماية المتكاملة في المملكة، من خلال الابتكار المستمر واعتماد التقنيات الحديثة في مجال الأمن وتقديم خدمات ذات جودة عالية، مستندة إلى تدريب كوادرها على أعلى معايير الاحترافية، بهدف تحقيق الأمان والاستقرار لعملائها في مختلف البيئات والمواقع، وتعزيز مكانتها محلياً ودولياً.
-        </p>
-    </div>
-</div>
-        </div>
-    </section>
-    <section  style="display: none;" id="values" class="py-20 bg-dark-green text-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-black">قيمنا الجوهرية</h2>
-                <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center p-6 border border-gray-700 rounded-xl hover:bg-white/5 transition">
-                    <div class="text-4xl text-yellow-500 mb-4"><i class="fas fa-user-tie"></i></div>
-                    <h4 class="text-xl font-bold mb-3">الاحترافية</h4>
-                    <ul class="text-gray-300 text-sm space-y-2">
-                        <li>الالتزام بالمعايير العالية</li>
-                        <li>التصرف بأخلاقية ومهنية</li>
-                    </ul>
-                </div>
-                <div class="text-center p-6 border border-gray-700 rounded-xl hover:bg-white/5 transition">
-                    <div class="text-4xl text-yellow-500 mb-4"><i class="fas fa-shield-halved"></i></div>
-                    <h4 class="text-xl font-bold mb-3">الانضباط</h4>
-                    <ul class="text-gray-300 text-sm space-y-2">
-                        <li>الالتزام بالقوانين واللوائح</li>
-                        <li>الدقة في أداء المهام</li>
-                    </ul>
-                </div>
-                <div class="text-center p-6 border border-gray-700 rounded-xl hover:bg-white/5 transition">
-                    <div class="text-4xl text-yellow-500 mb-4"><i class="fas fa-handshake"></i></div>
-                    <h4 class="text-xl font-bold mb-3">الشفافية</h4>
-                    <ul class="text-gray-300 text-sm space-y-2">
-                        <li>توفير معلومات واضحة للعملاء</li>
-                        <li>التواصل المباشر مع الشركاء</li>
-                    </ul>
-                </div>
-                <div class="text-center p-6 border border-gray-700 rounded-xl hover:bg-white/5 transition">
-                    <div class="text-4xl text-yellow-500 mb-4"><i class="fas fa-chart-line"></i></div>
-                    <h4 class="text-xl font-bold mb-3">الكفاءة</h4>
-                    <ul class="text-gray-300 text-sm space-y-2">
-                        <li>تقديم الخدمات بفعالية عالية</li>
-                        <li>استخدام الموارد بالشكل الأمثل</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section  style="display: none;" id="services" class="py-24 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-black text-dark-green">خدماتنا التخصصية</h2>
-                <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4"></div>
-            </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition group border-b-4 border-transparent hover:border-yellow-500">
-            <div class="icon-box w-14 h-14 bg-gray-100 text-dark-green flex items-center justify-center rounded-lg mb-6 transition text-2xl group-hover:bg-yellow-500 group-hover:text-white">
-                <i class="fas fa-user-shield"></i>
-            </div>
-            <h4 class="text-xl font-bold mb-3 group-hover:text-yellow-600 transition">الحراسات الأمنية</h4>
-            <p class="text-gray-500 text-sm leading-relaxed">توفير حراس أمن محترفين لحماية المنشآت وضمان أعلى مستويات اليقظة والجاهزية.</p>
-        </div>
-
-        <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition group border-b-4 border-transparent hover:border-yellow-500">
-            <div class="icon-box w-14 h-14 bg-gray-100 text-dark-green flex items-center justify-center rounded-lg mb-6 transition text-2xl group-hover:bg-yellow-500 group-hover:text-white">
-                <i class="fas fa-building-shield"></i>
-            </div>
-            <h4 class="text-xl font-bold mb-3 group-hover:text-yellow-600 transition">أمن المرافق والمنشآت</h4>
-            <p class="text-gray-500 text-sm leading-relaxed">تأمين شامل للمجمعات السكنية، المراكز التجارية، والمنشآت الصناعية وفق معايير عالمية.</p>
-        </div>
-
-        <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition group border-b-4 border-transparent hover:border-yellow-500">
-            <div class="icon-box w-14 h-14 bg-gray-100 text-dark-green flex items-center justify-center rounded-lg mb-6 transition text-2xl group-hover:bg-yellow-500 group-hover:text-white">
-                <i class="fas fa-video"></i>
-            </div>
-            <h4 class="text-xl font-bold mb-3 group-hover:text-yellow-600 transition">التجهيزات المتقدمة</h4>
-            <p class="text-gray-500 text-sm leading-relaxed">فريق مجهز بأحدث التقنيات الأمنية وأدوات الاتصال المتطورة لضمان السيطرة الكاملة.</p>
-        </div>
-
-        <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition group border-b-4 border-transparent hover:border-yellow-500">
-            <div class="icon-box w-14 h-14 bg-gray-100 text-dark-green flex items-center justify-center rounded-lg mb-6 transition text-2xl group-hover:bg-yellow-500 group-hover:text-white">
-                <i class="fas fa-magnifying-glass"></i>
-            </div>
-            <h4 class="text-xl font-bold mb-3 group-hover:text-yellow-600 transition">عمليات التفتيش</h4>
-            <p class="text-gray-500 text-sm leading-relaxed">إجراءات تفتيش دقيقة ومنظمة للأفراد والمركبات باستخدام أحدث أجهزة الكشف.</p>
-        </div>
-
-        <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition group border-b-4 border-transparent hover:border-yellow-500">
-            <div class="icon-box w-14 h-14 bg-gray-100 text-dark-green flex items-center justify-center rounded-lg mb-6 transition text-2xl group-hover:bg-yellow-500 group-hover:text-white">
-                <i class="fas fa-truck-fast"></i>
-            </div>
-            <h4 class="text-xl font-bold mb-3 group-hover:text-yellow-600 transition">الدعم الطارئ</h4>
-            <p class="text-gray-500 text-sm leading-relaxed">فرق استجابة فورية وحلول أمنية مبتكرة للتعامل مع أي حالات طارئة بفعالية عالية.</p>
-        </div>
-
-        <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition group border-b-4 border-transparent hover:border-yellow-500">
-            <div class="icon-box w-14 h-14 bg-gray-100 text-dark-green flex items-center justify-center rounded-lg mb-6 transition text-2xl group-hover:bg-yellow-500 group-hover:text-white">
-                <i class="fas fa-car-on"></i>
-            </div>
-            <h4 class="text-xl font-bold mb-3 group-hover:text-yellow-600 transition">الدوريات وإدارة الحركة</h4>
-            <p class="text-gray-500 text-sm leading-relaxed">تسيير دوريات ميدانية مستمرة لضبط الأمن وتنظيم حركة السير داخل المنشآت.</p>
-        </div>
-
-        <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition group border-b-4 border-transparent hover:border-yellow-500">
-            <div class="icon-box w-14 h-14 bg-gray-100 text-dark-green flex items-center justify-center rounded-lg mb-6 transition text-2xl group-hover:bg-yellow-500 group-hover:text-white">
-                <i class="fas fa-person-dress"></i>
-            </div>
-            <h4 class="text-xl font-bold mb-3 group-hover:text-yellow-600 transition">الأمن النسائي</h4>
-            <p class="text-gray-500 text-sm leading-relaxed">كوادر نسائية مدربة بكفاءة عالية لتلبية متطلبات الخصوصية في المواقع الحيوية.</p>
-        </div>
-
-        <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition group border-b-4 border-transparent hover:border-yellow-500">
-            <div class="icon-box w-14 h-14 bg-gray-100 text-dark-green flex items-center justify-center rounded-lg mb-6 transition text-2xl group-hover:bg-yellow-500 group-hover:text-white">
-                <i class="fas fa-people-group"></i>
-            </div>
-            <h4 class="text-xl font-bold mb-3 group-hover:text-yellow-600 transition">إدارة المهرجانات</h4>
-            <p class="text-gray-500 text-sm leading-relaxed">تنظيم الحشود وتأمين الفعاليات الكبرى بمهنية تضمن سلامة الحضور والمنشأة.</p>
-        </div>
-                <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition group border-b-4 border-transparent hover:border-yellow-500">
-            <div class="icon-box w-14 h-14 bg-gray-100 text-dark-green flex items-center justify-center rounded-lg mb-6 transition text-2xl group-hover:bg-yellow-500 group-hover:text-white">
-                <i class="fas fa-headset"></i>
-            </div>
-            <h4 class="text-xl font-bold mb-3 group-hover:text-yellow-600 transition">خدمة العملاء</h4>
-            <p class="text-gray-500 text-sm leading-relaxed">نلتزم بشراكة حقيقية مع عملائنا لتلبية احتياجاتهم الفريدة وتعزيز ثقتهم بنا على مدار الساعة.</p>
-        </div>
-    </div>
-        </div>
-    </section>
-
-<section  style="display: none;" id="partners" class="py-24 bg-white overflow-hidden">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-black text-dark-green">شركاء النجاح</h2>
-            <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4"></div>
-        </div>
-        
-        <div class="w-full px-0">
-            <div class="flex flex-col items-center">
-
-
-                <div >
-                    <img src="/images/coworkers.jpg" 
-                         alt="شركاء قمة الأمن الحديثة" 
-                         class="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-700 ease-in-out"
-                         style="max-width:800px; max-height:auto;">
-                </div>
-            </div>
-        </div>
-
-        <div class="container mx-auto px-6 text-center mt-12">
-            <p class="text-gray-500 italic">نفخر بثقة أكبر الكيانات الوطنية والعالمية في خدماتنا الأمنية المتكاملة.</p>
-        </div>
-    </section>
-<section id="contact" class="py-20 bg-gray-100">
-    <div  class="container mx-auto px-6">
-        <div class="max-w-4xl mx-auto bg-gray-50 rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
-            <div class="grid md:grid-cols-5">
-                <div class="md:col-span-2 bg-dark-green p-10 text-white flex flex-col justify-center">
-                    <h3 class="text-3xl font-bold mb-6">احصل على عرض سعر</h3>
-                    <p class="text-gray-300 mb-8 leading-relaxed">أدخل بياناتك وسيقوم فريقنا بالتواصل معك لتقديم عرض مناسب لمنشأتك.</p>
-                    <ul class="space-y-4 text-sm">
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-check-circle text-yellow-500"></i> فريق أمني احترافي
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-check-circle text-yellow-500"></i> حلول تقنية متطورة
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="md:col-span-3 p-10">
-                    <div id="success-msg" class="hidden text-center py-10">
-                        <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                            <i class="fas fa-paper-plane"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold text-dark-green mb-2">تم الإرسال بنجاح!</h4>
-                        <p class="text-gray-500">شكراً لتواصلك مع قمة الأمن الحديثة. سنتصل بك قريباً.</p>
-                        <button onclick="location.reload()" class="mt-6 text-sm text-yellow-600 font-bold underline">إرسال رد آخر</button>
-                    </div>
-
-                    <form id="google-form" action="https://docs.google.com/forms/d/e/1FAIpQLSebhknbNUv6S4j0j_eItZlCA4MSDsbujiZjwa2u9ZkLkJxg7g/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleFormSubmit()">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label class="text-sm font-bold text-gray-700">الاسم الكامل</label>
-                                <input type="text" name="entry.351608214" required placeholder="أدخل اسمك" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-sm font-bold text-gray-700">اسم الشركة</label>
-                                <input type="text" name="entry.1823498342" required placeholder="شركة..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-sm font-bold text-gray-700">البريد الإلكتروني</label>
-                                <input type="email" name="entry.1346169442" required placeholder="email@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition" dir="ltr">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-sm font-bold text-gray-700">رقم الجوال</label>
-                                <input type="tel" name="entry.1790884262" required placeholder="05xxxxxxxx" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition" dir="ltr">
-                            </div>
-                            <div class="md:col-span-2 space-y-2">
-                                <label class="text-sm font-bold text-gray-700">تفاصيل الطلب</label>
-                                <textarea name="entry.1881149656" rows="4" required placeholder="عدد الحراس - أيام وساعات الدوام -الموقع - تفاصيل أخرى" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition"></textarea>
-                            </div>
-                            <div class="md:col-span-2 mt-4">
-                                <button type="submit" id="submit-btn" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-extrabold py-4 rounded-lg shadow-lg transform hover:-translate-y-1 transition duration-300 flex items-center justify-center">
-    <span id="btn-text">إرسال الطلب الآن</span>
-    <div id="btn-spinner" class="spinner"></div>
-    <i id="btn-icon" class="fas fa-chevron-left mr-2"></i>
-</button>
-                            </div>
-                        </div>
-                    </form>
-                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {showSuccess();}"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section  id="footer" class="bg-gray-900 text-white pt-20 pb-12">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h3 class="text-2xl md:text-3xl font-black gold-text mb-4">معلومات التواصل</h3>
-                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
-                <p class="text-gray-400 mt-6 max-w-2xl mx-auto italic">نحن هنا للإجابة على استفساراتكم وتقديم الدعم اللازم.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center border-b border-gray-800 pb-16">
-                <div class="flex flex-col items-center group">
-                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center text-yellow-500 text-2xl mb-6 group-hover:bg-yellow-500 group-hover:text-dark-green transition duration-300">
-                        <i class="fas fa-location-dot"></i>
-                    </div>
-                    <h5 class="text-xl font-bold mb-4">المقر الرئيسي</h5>
-                    <p class="text-gray-400 text-sm leading-relaxed">الرياض، حي الحمراء، شارع الشيخ حسن بن حسين بن علي</p>
-                </div>
-
-                <div class="flex flex-col items-center group">
-                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center text-yellow-500 text-2xl mb-6 group-hover:bg-yellow-500 group-hover:text-dark-green transition duration-300">
-                        <i class="fas fa-phone-volume"></i>
-                    </div>
-                    <h5 class="text-xl font-bold mb-4">رقم التواصل</h5>
-                    <div class="space-y-1">
-                        <p class="text-yellow-500 font-bold mt-2" dir="ltr">+966543501159</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col items-center group">
-                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center text-yellow-500 text-2xl mb-6 group-hover:bg-yellow-500 group-hover:text-dark-green transition duration-300">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h5 class="text-xl font-bold mb-4">البريد الإلكتروني</h5>
-                    <div class="space-y-1">
-                        <p class="text-gray-400 text-sm italic">sales@qimahgroup.com</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex gap-8 text-xs text-gray-500">
-                    <span>سجل تجاري: 4030130976</span>
-                    <span>رقم موحد: 7014776566</span>
-                </div>
-                <div class="text-gray-500 text-sm text-center md:text-right">
-                    <p>&copy; 2026 قمة الأمن الحديثة للحراسات الأمنية. جميع الحقوق محفوظة.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-<script>
-    let submitted = false;
-
-    function handleFormSubmit() {
-        const btn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
-        const btnSpinner = document.getElementById('btn-spinner');
-        const btnIcon = document.getElementById('btn-icon');
-
-        // 1. تفعيل حالة التحميل
-        submitted = true;
-        btn.disabled = true; // تعطيل الزر لمنع الإرسال المتكرر
-        btnText.innerText = " جارٍ الإرسال...";
-        btnSpinner.style.display = "inline-block"; // إظهار الأيقونة المتحركة
-        btnIcon.style.display = "none"; // إخفاء السهم الصغير
-
-        return true;
-    }
-
-    function showSuccess() {
-        // إخفاء النموذج وإظهار رسالة النجاح
-        document.getElementById('google-form').classList.add('hidden');
-        document.getElementById('success-msg').classList.remove('hidden');
-        
-        // إعادة الزر لحالته الأصلية (في حال أراد المستخدم العودة)
-        const btn = document.getElementById('submit-btn');
-        btn.disabled = false;
-        
-        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    }
-</script>
-    <script>document.querySelector("#contact").scrollIntoView({ behavior: 'smooth' })</script>
 </body>
 </html>
